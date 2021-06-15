@@ -362,6 +362,7 @@ void CApplication::RegisterSettings()
                                        CSettings::SETTING_VIDEOSCREEN_TESTPATTERN,
                                        CSettings::SETTING_VIDEOPLAYER_USEMEDIACODEC,
                                        CSettings::SETTING_VIDEOPLAYER_USEMEDIACODECSURFACE,
+									   CSettings::SETTING_VIDEOPLAYER_USEPIP,
                                        CSettings::SETTING_AUDIOOUTPUT_VOLUMESTEPS,
                                        CSettings::SETTING_SOURCE_VIDEOS,
                                        CSettings::SETTING_SOURCE_MUSIC,

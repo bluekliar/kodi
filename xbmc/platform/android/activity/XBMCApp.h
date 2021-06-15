@@ -112,6 +112,9 @@ public:
   virtual void onAudioFocusChange(int focusChange);
   void doFrame(int64_t frameTimeNanos) override;
   void onVisibleBehindCanceled() override;
+  void onMultiWindowModeChanged(bool isInMultiWindowMode) override;
+  void onPictureInPictureModeChanged(bool isInPictureInPictureMode) override;
+  void onUserLeaveHint() override;
 
   // implementation of CJNIInputManagerInputDeviceListener
   void onInputDeviceAdded(int deviceId) override;
@@ -205,6 +208,9 @@ public:
   // Application slow ping
   void ProcessSlow();
 
+  //PIP
+  void RequestPictureInPictureMode();
+
   bool WaitVSync(unsigned int milliSeconds);
   int64_t GetNextFrameTime() const;
   float GetFrameLatencyMs() const;
@@ -248,6 +254,7 @@ private:
   std::unique_ptr<CJNIWakeLock> m_wakeLock;
   int m_batteryLevel{0};
   bool m_hasFocus{false};
+  bool m_hasPIP{false};
   bool m_headsetPlugged{false};
   bool m_hdmiSource{false};
   IInputDeviceCallbacks* m_inputDeviceCallbacks{nullptr};
